@@ -9,12 +9,14 @@
   document.getElementById("feature-icon-value").src = img.iconValue;
 
   const row = document.getElementById("home-products");
-  products.slice(0, 4).forEach((p) => {
-    row.insertAdjacentHTML(
-      "beforeend",
-      `<a class="product-card" href="products.html"><img src="${p.image}" alt="${p.name}" loading="lazy" /><span class="product-card__label">${p.name}</span></a>`
-    );
-  });
+      products.slice(0, 4).forEach((p) => {
+        const sym = p.currency === "EUR" ? "€" : p.price ? "¥" : "";
+        const priceTag = p.price ? ` · ${sym}${p.price}` : "";
+        row.insertAdjacentHTML(
+          "beforeend",
+          `<a class="product-card" href="products.html"><img src="${p.image}" alt="${p.name}" loading="lazy" /><span class="product-card__label">${p.name}${priceTag}</span></a>`
+        );
+      });
 
   const apparel = document.getElementById("apparel-grid");
   img.gallery.forEach((src, i) => {

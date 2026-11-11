@@ -51,7 +51,7 @@
         <article class="footer-product">
           <a href="products.html"><img src="${p.image}" alt="${p.name}" loading="lazy" /></a>
           <h4>${p.name}</h4>
-          ${p.price ? `<p class="price">¥ ${p.price}</p>` : ""}
+          ${p.price ? `<p class="price">${p.currency === "EUR" ? "€" : "¥"} ${p.price}</p>` : ""}
         </article>`
       )
       .join("");

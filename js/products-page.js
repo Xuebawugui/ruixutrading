@@ -3,13 +3,15 @@
 
   const grid = document.getElementById("product-catalog");
   products.forEach((p) => {
+    const price = window.formatProductPrice(p);
     grid.insertAdjacentHTML(
       "beforeend",
       `<article class="product-tile">
         <div class="product-tile__img"><img src="${p.image}" alt="${p.name}" loading="lazy" /></div>
         <div class="product-tile__body">
           <h3>${p.name}</h3>
-          ${p.price ? `<p class="product-tile__price">From ¥${p.price} wholesale</p>` : `<p class="product-tile__price">Price on request</p>`}
+          <p class="product-tile__price">${price.main}</p>
+          ${p.note ? `<p class="product-tile__note">${p.note}</p>` : ""}
           <p class="product-tile__hint">Mixed orders · Dropship OK</p>
         </div>
       </article>`

@@ -545,6 +545,13 @@ main {
   font-weight: 500;
 }
 
+.product-tile__note {
+  margin: 6px 0 0;
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
 .product-tile__hint {
   margin: 6px 0 0;
   font-size: 12px;
